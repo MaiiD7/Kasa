@@ -11,7 +11,7 @@ const StyledFooter = styled.footer`
     background-color: black;
 `
 
-function Footer() {
+const Footer = () => {
     return (
         <StyledFooter>
             <NavLink>

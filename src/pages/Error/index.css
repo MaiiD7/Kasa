@@ -1,0 +1,21 @@
+#erreur {
+  font-size: 18vw;
+  margin: 10vh 0 0 0;
+}
+
+#erreur-info {
+  font-size: 2vw;
+  font-weight: 500;
+  margin: 5vh 0 0 0;
+}
+
+@media screen and (max-width: 1024px){
+  #erreur {
+    font-size: 22vw;
+  }
+  #erreur-info {
+    font-size: 5vw;
+    margin: 5vh auto;
+    text-align: center;
+  }
+}

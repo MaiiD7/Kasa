@@ -7,11 +7,17 @@ import StayPage from './pages/Stay';
 import ErrorPage from './pages/Error';
 import AboutPage from './pages/About';
 import Header from './components/Header';
-import Footer from './components/Footer';
 import { ThemeProvider } from 'styled-components';
 
 const theme = {
-  mainColor: '#FF6060'
+  mainColor: '#FF6060',
+  breakpoints: {
+    xs: 0,
+    sm: 480,
+    md: 768,
+    lg: 1024,
+    xl: 1200
+  }
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -26,7 +32,6 @@ root.render(
           <Route path='/about' element={<AboutPage />} />
           <Route path='*' element={<ErrorPage />} />
         </Routes>
-        <Footer/>
       </ThemeProvider>
       
     </Router>

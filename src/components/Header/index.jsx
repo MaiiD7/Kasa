@@ -11,7 +11,6 @@ const StyledHeader = styled.header`
 
 const NavbarLink = styled(NavLink)`
     ${(props) => {
-        console.log(props);
         return `
         text-decoration: none;
         font-size: 20px;
@@ -20,13 +19,9 @@ const NavbarLink = styled(NavLink)`
             text-decoration: underline;
         }
         `
-        
-    }}
-    
-    
-`
+    }}`
  
-function Header() {
+const Header = () => {
     return (
         <StyledHeader>
             <NavbarLink to="/">
