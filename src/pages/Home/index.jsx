@@ -2,6 +2,8 @@ import Banner from '../../components/Banner';
 import styled from 'styled-components';
 import HomeStays from '../../components/HomeStays';
 import Footer from '../../components/Footer';
+import bannerBackground from '../../assets/Banner-background-home.png'
+import Header from '../../components/Header';
 
 const Home = styled.div`
   text-align: center;
@@ -10,7 +12,8 @@ const Home = styled.div`
 const HomePage = () => {
   return (
     <Home>
-      <Banner/>
+      <Header/>
+      <Banner bannerBackground={bannerBackground} home={true}/>
       <HomeStays/>
       <Footer/>
     </Home>

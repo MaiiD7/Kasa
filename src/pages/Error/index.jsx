@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import './index.css';
 import breakpoint from 'styled-components-breakpoint';
 import { NavLink } from 'react-router-dom';
+import Header from '../../components/Header';
 
 const MainSection = styled.div`
   ${(props) => {
@@ -31,6 +32,7 @@ const CustomNavLink = styled(NavLink)`
 const ErrorPage = () => {
   return (
     <div className="Stay">
+      <Header/>
       <MainSection>
         <h2 id="erreur" className='errorPageText'>404</h2>
         <p id="erreur-info" className='errorPageText'>Oups! La page que vous demandez n'existe pas.</p>

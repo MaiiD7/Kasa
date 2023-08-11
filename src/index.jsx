@@ -6,7 +6,6 @@ import HomePage from './pages/Home/index';
 import StayPage from './pages/Stay';
 import ErrorPage from './pages/Error';
 import AboutPage from './pages/About';
-import Header from './components/Header';
 import { ThemeProvider } from 'styled-components';
 
 const theme = {
@@ -25,7 +24,6 @@ root.render(
   <React.StrictMode>
     <Router>
       <ThemeProvider theme={theme}>
-        <Header/>
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/stay/:stayId' element={<StayPage />} />
@@ -33,7 +31,6 @@ root.render(
           <Route path='*' element={<ErrorPage />} />
         </Routes>
       </ThemeProvider>
-      
     </Router>
   </React.StrictMode>
 );

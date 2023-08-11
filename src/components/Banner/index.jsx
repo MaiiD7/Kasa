@@ -1,30 +1,32 @@
 import styled from 'styled-components';
-import bannerBackground from '../../assets/Banner-background.png'
 import breakpoint from 'styled-components-breakpoint';
 
 const StyledBanner = styled.div`
-    position: relative;
-    width: 80%;
-    height: 120px;
-    margin: 40px auto;
-    padding: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 300;
-    font-size: 24px;
-    &:before {
-        content: '';
-        border-radius: 20px;
-        background-image: url(${bannerBackground});
-        filter: brightness(75%);
-        background-size: cover;
-        background-position: 25% 50%;
-        position:absolute;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-    };
+    ${(props) => {
+        return `
+        position: relative;
+        width: 80%;
+        height: 120px;
+        margin: 40px auto;
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 300;
+        font-size: 24px;
+        &:before {
+            content: '';
+            border-radius: 20px;
+            background-image: url(${props.bannerBackground});
+            filter: brightness(75%);
+            background-size: cover;
+            background-position: 25% 50%;
+            position:absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        };   `
+    }}
     ${breakpoint('sm')`
         width: 80%;
         height: 150px;
@@ -50,10 +52,15 @@ const AboveText = styled.h2`
     `};
 `
 
-const Banner = () => {
+const Banner = (props) => {
+
+    const {bannerBackground, home} = props;
+
     return (
-        <StyledBanner>
-            <AboveText><span>Chez vous,&nbsp;</span> <span>partout et ailleurs</span></AboveText>
+        <StyledBanner bannerBackground={bannerBackground}>
+            {home && (
+                <AboveText><span>Chez vous,&nbsp;</span> <span>partout et ailleurs</span></AboveText>
+            )}
         </StyledBanner>
     )
 }
