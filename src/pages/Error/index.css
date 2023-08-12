@@ -1,6 +1,6 @@
 #erreur {
   font-size: 18vw;
-  margin: 10vh 0 0 0;
+  margin: 2vh 0 0 0;
 }
 
 #erreur-info {
@@ -11,7 +11,20 @@
 
 @media screen and (max-width: 1024px){
   #erreur {
+    font-size: 16vw;
+    margin: 10vh 0 0 0;
+  }
+  #erreur-info {
+    font-size: 3vw;
+    margin: 5vh auto;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px){
+  #erreur {
     font-size: 22vw;
+    margin: 12vh 0 0 0;
   }
   #erreur-info {
     font-size: 5vw;

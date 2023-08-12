@@ -26,7 +26,7 @@ root.render(
       <ThemeProvider theme={theme}>
         <Routes>
           <Route path='/' element={<HomePage />} />
-          <Route path='/stay/:stayId' element={<StayPage />} />
+          <Route path='/stays/:stayId' element={<StayPage />} />
           <Route path='/about' element={<AboutPage />} />
           <Route path='*' element={<ErrorPage />} />
         </Routes>

@@ -4,13 +4,20 @@ import breakpoint from 'styled-components-breakpoint';
 import { NavLink } from 'react-router-dom';
 import Header from '../../components/Header';
 
+const Error = styled.div`
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+`
+
 const MainSection = styled.div`
   ${(props) => {
-    return `height: 80vh;
-    width: 100vw;
+    return `
+    width: 80%;
     display flex;
     flex-direction: column;
     align-items: center;
+    margin: 0 auto;
     color: ${props.theme.mainColor};
     `
   }}`
@@ -21,17 +28,21 @@ const CustomNavLink = styled(NavLink)`
     text-decoration: underline;
     font-size: 3vw;
     color: ${props.theme.mainColor};
-    margin-top: 120px;
+    margin-top: 75px;
     `
   }};
+  ${breakpoint('md')`
+      font-size: 2vw;
+      text-decoration: underline;
+    `}
   ${breakpoint('lg')`
-      font-size: 1.5vw;
+      font-size: 1.2vw;
       text-decoration: underline;
     `}`
 
 const ErrorPage = () => {
   return (
-    <div className="Stay">
+    <Error>
       <Header/>
       <MainSection>
         <h2 id="erreur" className='errorPageText'>404</h2>
@@ -39,7 +50,7 @@ const ErrorPage = () => {
         <CustomNavLink to="/">Retourner sur la page d’accueil</CustomNavLink>
       </MainSection>
       
-    </div>
+    </Error>
   );
 }
 

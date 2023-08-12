@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Card = styled.article`
   width: 335px;
@@ -9,6 +10,7 @@ const Card = styled.article`
   padding: 20px;
   background-position: cover;
   background-position: center;
+  cursor: pointer;
 `
 
 const CardTitle = styled.p`
@@ -25,11 +27,13 @@ const StayCard = (props) => {
 
   const {stay} = props
 
-  
   return (
+    <Link to={`/stays/${stay.id}`}>
       <Card style={{backgroundImage: `url(${stay.cover})`, position: 'relative'}}>
         <CardTitle style={{position: 'absolute'}}>{stay.title}</CardTitle>
       </Card>
+    </Link>
+      
   )
 }
 
