@@ -98,7 +98,6 @@ const StayInfos = (props) => {
   const hostNameArray = stay.host.name.split(" ");
   const rating = Number(stay.rating);
   const equipments = stay.equipments.join(`\n`);
-  console.log(equipments);
 
   return (
     <>
@@ -121,14 +120,14 @@ const StayInfos = (props) => {
           <HostPicture src={stay.host.picture} alt={stay.host.name}/>
         </div>
         <Rating>
-          {[...Array(rating)].map((star) => (<FontAwesomeIcon icon={faStar} />))}
-          {[...Array(5-rating)].map((star) => (<FontAwesomeIcon icon={faStar} color='rgba(227, 227, 227, 1)'/>))}
+          {[...Array(rating)].map((star,index) => (<FontAwesomeIcon key={index} icon={faStar} />))}
+          {[...Array(5-rating)].map((star,index) => (<FontAwesomeIcon key={index+5} icon={faStar} color='rgba(227, 227, 227, 1)'/>))}
         </Rating>
       </HostRatingContainer>
     </Infos>
     <TabContainer>
-      <Tab key='description' title='Description' description={stay.description}/>
-      <Tab key='equipements' title='Equipements' description={equipments}/>
+      <Tab title={'Description'} description={stay.description}/>
+      <Tab title={'Equipements'} description={equipments} style={{whiteSpace: 'pre-wrap'}}/>
     </TabContainer>
     </>
     

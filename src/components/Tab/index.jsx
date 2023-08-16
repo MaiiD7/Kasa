@@ -54,12 +54,14 @@ const TabContent = styled.div`
     font-size: 18px;
     line-height: 30px;
     display: ${props.openTab ? 'visible' : 'none'};
+    white-space: pre-wrap;
   `
   }}
 `
 
 const Tab = (props) => {
   const { title, description } = props
+  console.log(props.title);
   const [openTab, setOpenTab] = useState(false)
 
   return (
