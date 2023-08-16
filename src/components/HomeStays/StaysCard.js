@@ -1,16 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
+import { breakpoint } from 'styled-components-breakpoint';
 import { Link } from 'react-router-dom';
 
 const Card = styled.article`
-  width: 335px;
-  aspect-ratio: 1 / 1;
+  width: 300px;
+  aspect-ratio: 1 / 0.75;
   border-radius: 10px;
   margin: 20px;
   padding: 20px;
   background-position: cover;
   background-position: center;
   cursor: pointer;
+  ${breakpoint('sm')`
+    width: 335px;
+    aspect-ratio: 1 / 1;
+    `}
 `
 
 const CardTitle = styled.p`

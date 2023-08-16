@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import logo from "../../assets/logo_kasa.jpg"
 import styled from 'styled-components';
+import { breakpoint } from 'styled-components-breakpoint';
 
 const StyledHeader = styled.header`
     display: flex;
@@ -13,13 +14,18 @@ const NavbarLink = styled(NavLink)`
     ${(props) => {
         return `
         text-decoration: none;
-        font-size: 20px;
+        font-size: 14px;
         color: ${props.theme.mainColor};
+        text-transform: uppercase;
         &.active {
             text-decoration: underline;
         }
         `
-    }}`
+    }}
+    ${breakpoint('md')`
+        font-size: 20px;
+        text-transform: none;
+    `}`
  
 const Header = () => {
     return (
@@ -27,7 +33,7 @@ const Header = () => {
             <NavbarLink to="/">
                 <img src={logo} alt="logo-kasa" style={{width: '12vw', minWidth: '100px', height: 'auto'}}/>
             </NavbarLink>
-            <nav style={{minWidth: '15vw', width: '180px',display: 'flex', justifyContent: 'space-around'}}>
+            <nav style={{minWidth: '15vw', width: 'fit-content',display: 'flex', justifyContent: 'space-around', gap: '15px'}}>
                 <NavbarLink to="/" className={({ isActive }) => {
                     return isActive ? 'active': ''
                 }}>Accueil</NavbarLink>
